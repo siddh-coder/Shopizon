@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Analysis App</title>
+</head>
+<body>
+    <h1>YouTube Video Analysis</h1>
+    <form method="post">
+        <input type="text" name="video_url" placeholder="Enter YouTube video URL" required>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if images %}
+        <h2>Extracted Images:</h2>
+        {% for image in images %}
+            <img src="{{ image }}" alt="Extracted Image" width="300">
+        {% endfor %}
+    {% endif %}
+    {% if result %}
+        <h2>Transcription:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
